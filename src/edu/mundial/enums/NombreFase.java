@@ -1,5 +1,5 @@
 package edu.mundial.enums;
 
 public enum NombreFase {
-    GRUPOS, DIECISEISAVOS, OCTAVOS, CUARTOS, SEMIFINAL, FINAL;
+    Grupos, Dieciseisavos, Octavos, Cuartos, Semifinal, Final;
 }
