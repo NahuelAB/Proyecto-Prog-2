@@ -2,4 +2,20 @@ package edu.mundial.model.personas;
 
 public class Arbitro extends Persona {
     private int aniosExperiencia;
+
+    public Arbitro(){
+        super();
+        this.aniosExperiencia = 0;
+    }
+
+    public Arbitro(String nombre, int fecNacimiento, int aniosExperiencia){
+        super(nombre, fecNacimiento);
+        this.aniosExperiencia = aniosExperiencia;
+    }
+    public int getAniosExperiencia() {
+        return aniosExperiencia;
+    }
+    public void setAniosExperiencia(int aniosExperiencia) {
+        this.aniosExperiencia = aniosExperiencia;
+    }
 }
