@@ -1,11 +1,13 @@
 package edu.mundial.model.personas;
 import edu.mundial.enums.Posicion;
+import edu.mundial.model.organizacion.Seleccion;
 
 public class Jugador extends Persona {
     private int dorsal;
     private Posicion posicion;
     private float peso;
     private float altura;
+    public Seleccion integra;
 
     public Jugador(){
         super();
@@ -13,14 +15,16 @@ public class Jugador extends Persona {
         this.posicion=null;
         this.peso=0;
         this.altura=0;
+        this.integra=null;
     }
 
-    public Jugador(String nombre, int fecNacimiento, int dorsal, Posicion posicion, float peso, float altura){
+    public Jugador(String nombre, int fecNacimiento, int dorsal, Posicion posicion, float peso, float altura, Seleccion integra){
         super(nombre, fecNacimiento);
         this.dorsal=dorsal;
         this.posicion=posicion;
         this.peso=peso;
         this.altura=altura;
+        this.integra=integra;
     }
 
     public int getDorsal() {
@@ -53,5 +57,11 @@ public class Jugador extends Persona {
 
     public void setAltura(float altura) {
         this.altura = altura;
+    }
+    public Seleccion getIntegra() {
+        return integra;
+    }
+    public void setIntegra(Seleccion integra) {
+        this.integra = integra;
     }
 }

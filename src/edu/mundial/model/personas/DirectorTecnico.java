@@ -1,16 +1,20 @@
 package edu.mundial.model.personas;
+import edu.mundial.model.organizacion.Seleccion;
 
 public class DirectorTecnico extends Persona {
     private int fechaNombramiento;
+    public Seleccion dirige;
 
     public DirectorTecnico(){
         super();
         this.fechaNombramiento=0;
+        this.dirige = null;
     }
 
-    public DirectorTecnico(String nombre, int fecNacimiento, int fechaNombramiento){
+    public DirectorTecnico(String nombre, int fecNacimiento, int fechaNombramiento, Seleccion dirige){
         super(nombre, fecNacimiento);
-        this.fechaNombramiento=fechaNombramiento;
+        this.fechaNombramiento = fechaNombramiento;
+        this.dirige = dirige;
     }
 
     public int getFechaNombramiento() {
