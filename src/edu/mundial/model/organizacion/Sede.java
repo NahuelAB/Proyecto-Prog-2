@@ -5,19 +5,22 @@ public class Sede {
     private float alturaNivelMar;
     private String clima;
     private String zonaHoraria;
+    public Pais pertenece;
 
     public Sede() {
         this.ciudad = null;
         this.alturaNivelMar = 0;
         this.clima = null;
         this.zonaHoraria = null;
+        this.pertenece = null;
     }
 
-    public Sede(String ciudad, float alturaNivelMar, String clima, String zonaHoraria) {
+    public Sede(String ciudad, float alturaNivelMar, String clima, String zonaHoraria, Pais pertenece) {
         this.ciudad = ciudad;
         this.alturaNivelMar = alturaNivelMar;
         this.clima = clima;
         this.zonaHoraria = zonaHoraria;
+        this.pertenece = pertenece;
     }
 
     public String getCiudad() {
@@ -46,5 +49,12 @@ public class Sede {
     }
     public void setZonaHoraria(String zonaHoraria) {
         this.zonaHoraria = zonaHoraria;
+    }
+
+    public Pais getPertenece() {
+        return pertenece;
+    }
+    public void setPertenece(Pais pertenece) {
+        this.pertenece = pertenece;
     }
 }

@@ -4,8 +4,7 @@ public class Pais {
     private String nombre;
     private String bandera;
     public Seleccion representa;
-    public Sede pertenece;
-
+   
     public Pais() {
         this.nombre = null;
         this.bandera = null;
@@ -16,11 +15,10 @@ public class Pais {
         this.bandera = bandera;
     }
 
-    public Pais(String nombre, String bandera, Seleccion representa, Sede pertenece) {
+    public Pais(String nombre, String bandera, Seleccion representa) {
         this.nombre = nombre;
         this.bandera = bandera;
         this.representa = representa;
-        this.pertenece = pertenece;
     }
 
     public String getNombre() {
@@ -44,10 +42,5 @@ public class Pais {
         this.representa = representa;
     }
 
-    public Sede getPertenece() {
-        return pertenece;
-    }
-    public void setPertenece(Sede pertenece) {
-        this.pertenece = pertenece;
-    }
+
 }
