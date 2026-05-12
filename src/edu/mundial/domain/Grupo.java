@@ -1,4 +1,5 @@
 package edu.mundial.domain;
+import edu.mundial.model.organizacion.Seleccion;
 
 public class Grupo {
     private String identificacion;
@@ -12,7 +13,7 @@ public class Grupo {
     public int obtenerPuntos(Seleccion s){
         int puntos = 0;
 
-    // Implementación de la lógica sobre obtener puntos
+    // Implementación de la lógica sobre obtenerPuntos
 
         return puntos;
     }
