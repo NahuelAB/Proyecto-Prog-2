@@ -2,13 +2,20 @@ package edu.mundial.model.personas;
 import edu.mundial.enums.Posicion;
 import edu.mundial.model.organizacion.Seleccion;
 
+/**
+ * Representa a un deportista inscripto en el mundial.
+ * Mantiene información sobre su físico, posición en el campo y la selección que integra.
+ */
 public class Jugador extends Persona {
     private int dorsal;
     private Posicion posicion;
     private float peso;
     private float altura;
-    public Seleccion integra;
+    private Seleccion integra;
 
+    /**
+     * Constructor por defecto.
+     */
     public Jugador(){
         super();
         this.dorsal=0;
@@ -18,6 +25,16 @@ public class Jugador extends Persona {
         this.integra=null;
     }
 
+    /**
+     * Constructor completo para registrar un jugador.
+     * @param nombre Nombre del jugador heredado de Persona.
+     * @param fecNacimiento Año de nacimiento heredado de Persona.
+     * @param dorsal Número de camiseta asignado.
+     * @param posicion Puesto en el que juega (Arquero, Defensor, etc.).
+     * @param peso Peso en kilogramos.
+     * @param altura Altura en metros.
+     * @param integra Selección nacional a la que representa.
+     */
     public Jugador(String nombre, int fecNacimiento, int dorsal, Posicion posicion, float peso, float altura, Seleccion integra){
         super(nombre, fecNacimiento);
         this.dorsal=dorsal;
