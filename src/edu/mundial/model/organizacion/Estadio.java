@@ -3,15 +3,18 @@ package edu.mundial.model.organizacion;
 public class Estadio {
     private String nombre;
     private int capacidad;
+    public Sede tiene;
 
     public Estadio() {
         this.nombre = null;
         this.capacidad = 0;
+        this.tiene = null;
     }
 
-    public Estadio(String nombre, int capacidad) {
+    public Estadio(String nombre, int capacidad, Sede tiene) {
         this.nombre = nombre;
         this.capacidad = capacidad;
+        this.tiene = tiene;
     }
 
     public String getNombre() {
@@ -26,5 +29,12 @@ public class Estadio {
     }
     public void setCapacidad(int capacidad) {
         this.capacidad = capacidad;
+    }
+
+    public Sede getTiene() {
+        return tiene;
+    }
+    public void setTiene(Sede tiene) {
+        this.tiene = tiene;
     }
 }
