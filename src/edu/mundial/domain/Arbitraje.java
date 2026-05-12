@@ -10,9 +10,9 @@ public class Arbitraje {
     private Partido partido;
 
     public Arbitraje(){
-        this.categoria=null;
-        this.arbitro=null;
-        this.partido=null;
+        this.categoria = null;
+        this.arbitro = null;
+        this.partido = null;
     }
 
     public Arbitraje(CategoriaArbitro categoria,  Arbitro arbitro, Partido partido){
