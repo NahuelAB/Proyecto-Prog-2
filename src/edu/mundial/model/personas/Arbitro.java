@@ -1,5 +1,5 @@
 package edu.mundial.model.personas;
 
-public class Arbitro {
-
+public class Arbitro extends Persona {
+    private int aniosExperiencia;
 }
