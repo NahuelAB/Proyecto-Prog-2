@@ -6,6 +6,7 @@ public class Seleccion {
     private String camisetaSecundaria;
     private boolean cabezaGrupo;
     private int rankingFIFA;
+    public Pais representa;
 
     public Seleccion() {
         this.nombreFederacion = null;
@@ -13,14 +14,16 @@ public class Seleccion {
         this.camisetaSecundaria = null;
         this.cabezaGrupo = false;
         this.rankingFIFA = 0;
+        this.representa = null;
     }
 
-    public Seleccion(String nombreFederacion, String camisetaPrincipal, String camisetaSecundaria, boolean cabezaGrupo, int rankingFIFA) {
+    public Seleccion(String nombreFederacion, String camisetaPrincipal, String camisetaSecundaria, boolean cabezaGrupo, int rankingFIFA, Pais representa) {
         this.nombreFederacion = nombreFederacion;
         this.camisetaPrincipal = camisetaPrincipal;
-        this.camisetaSecundaria = camisetaPrincipal;
+        this.camisetaSecundaria = camisetaSecundaria;
         this.cabezaGrupo = cabezaGrupo;
         this.rankingFIFA = rankingFIFA;
+        this.representa = representa;
     }
 
     public String getNombreFederacion() {
@@ -44,7 +47,7 @@ public class Seleccion {
         this.camisetaSecundaria = camisetaSecundaria;
     }
 
-    public boolean getCabezaGrupo() {
+    public boolean isCabezaGrupo() {
         return cabezaGrupo;
     }
     public void setCabezaGrupo(boolean cabezaGrupo) {
@@ -57,4 +60,12 @@ public class Seleccion {
     public void setRankingFIFA(int rankingFIFA) {
         this.rankingFIFA = rankingFIFA;
     }
+
+    public Pais getRepresenta() {
+        return representa;
+    }
+    public void setRepresenta(Pais representa) {
+        this.representa = representa;
+    }
+
 }
