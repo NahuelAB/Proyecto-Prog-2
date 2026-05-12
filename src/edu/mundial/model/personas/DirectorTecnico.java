@@ -24,4 +24,12 @@ public class DirectorTecnico extends Persona {
     public void setFechaNombramiento(int fechaNombramiento) {
         this.fechaNombramiento = fechaNombramiento;
     }
+
+    public Seleccion getDirige() {
+        return dirige;
+    }
+
+    public void setDirige(Seleccion dirige) {
+        this.dirige = dirige;
+    }
 }
