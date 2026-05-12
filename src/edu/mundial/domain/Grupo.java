@@ -1,9 +1,14 @@
 package edu.mundial.domain;
 import edu.mundial.model.organizacion.Seleccion;
 
-public class Grupo {
+public class Grupo{
     private String identificacion;
     private String descripcion;
+
+    public Grupo(){
+        this.identificacion = null;
+        this.descripcion = null;
+    }
 
     public Grupo(String identificacion, String descripcion){
         this.identificacion = identificacion;
