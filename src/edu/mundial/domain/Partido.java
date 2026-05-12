@@ -42,15 +42,13 @@ public class Partido{
         return duracion;
     }
 
-    public void setDuracion(int duracion){
-        this.duracion = duracion;
-    }
-
     public int getTiempoAdicional(){
         return tiempoAdicional;
     }
 
-    public void setTiempoAdicional(int tiempoAdicional){
-        this.tiempoAdicional = tiempoAdicional;
+    public void setTiempoAdicional(int tiempoAdicional) {
+        if (tiempoAdicional >= 0) {
+            this.tiempoAdicional = tiempoAdicional;
+        }
     }
 }
