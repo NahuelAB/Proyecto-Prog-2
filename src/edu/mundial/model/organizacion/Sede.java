@@ -1,4 +1,5 @@
 package edu.mundial.model.organizacion;
+import edu.mundial.domain.Mundial;
 
 public class Sede {
     private String ciudad;
@@ -6,6 +7,7 @@ public class Sede {
     private String clima;
     private String zonaHoraria;
     public Pais pertenece;
+    public Mundial mundial;
 
     public Sede() {
         this.ciudad = null;
@@ -13,14 +15,16 @@ public class Sede {
         this.clima = null;
         this.zonaHoraria = null;
         this.pertenece = null;
+        this.mundial = null;
     }
 
-    public Sede(String ciudad, float alturaNivelMar, String clima, String zonaHoraria, Pais pertenece) {
+    public Sede(String ciudad, float alturaNivelMar, String clima, String zonaHoraria, Pais pertenece, Mundial mundial) {
         this.ciudad = ciudad;
         this.alturaNivelMar = alturaNivelMar;
         this.clima = clima;
         this.zonaHoraria = zonaHoraria;
         this.pertenece = pertenece;
+        this.mundial = mundial;
     }
 
     public String getCiudad() {
@@ -56,5 +60,12 @@ public class Sede {
     }
     public void setPertenece(Pais pertenece) {
         this.pertenece = pertenece;
+    }
+
+    public Mundial getMundial() {
+        return mundial;
+    }
+    public void setMundial(Mundial mundial) {
+        this.mundial = mundial;
     }
 }
