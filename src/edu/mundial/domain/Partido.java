@@ -1,5 +1,6 @@
 package edu.mundial.domain;
 import edu.mundial.enums.TipoEvento;
+import edu.mundial.model.personas.Jugador;
 
 import java.time.LocalTime;
 import java.time.LocalDate;
@@ -19,7 +20,7 @@ public class Partido{
         this.horario = null;
         this.duracion = 0;
         this.tiempoAdicional = 0;
-        this.eventos = null;
+        this.eventos = new ArrayList<>();
     }
 
     public Partido(LocalDate fecha, LocalTime horario, int duracion, int tiempoAdicional, Evento eventos){
@@ -27,7 +28,6 @@ public class Partido{
         this.horario = horario;
         this.duracion = duracion;
         this.tiempoAdicional = tiempoAdicional;
-
         this.eventos = new ArrayList<>();
     }
 
@@ -61,9 +61,9 @@ public class Partido{
         }
     }
 
-    public void nuevoEvento(TipoEvento tipo, int minuto){
-        Evento evento = new Evento(tipo, minuto, this);
-        eventos.add(evento);
+    public void nuevoEvento(TipoEvento tipo, int minuto, Jugador involucra){
+        Evento evento = new Evento(tipo, minuto, this, involucra);
+        this.eventos.add(evento);
     }
 
     public List<Evento> getEventos(){

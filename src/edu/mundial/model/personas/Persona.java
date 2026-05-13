@@ -10,7 +10,7 @@ public abstract class Persona {
     private int fecNacimiento;
 
     /**
-     * Constructor por defecto de Persona.
+     * Constructor por defecto.
      */
     public Persona(){
         this.nombre="";

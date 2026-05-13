@@ -5,6 +5,9 @@ public class DirectorTecnico extends Persona {
     private int fechaNombramiento;
     public Seleccion dirige;
 
+    /**
+     * Constructor por defecto.
+     */
     public DirectorTecnico(){
         super();
         this.fechaNombramiento=0;

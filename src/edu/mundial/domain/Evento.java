@@ -1,21 +1,29 @@
 package edu.mundial.domain;
 import edu.mundial.enums.TipoEvento;
+import edu.mundial.model.personas.Jugador;
 
+/**
+ * Representa un suceso ocurrido durante un partido (Gol, Tarjeta, etc.).
+ * Esta clase conecta el tiempo del partido con el protagonista del evento.
+ */
 public class Evento{
     private TipoEvento tipo;
     private int minuto;
     private Partido partido;
+    private Jugador involucra;
 
     public Evento(){
         this.tipo = null;
         this.minuto = 0;
         this.partido = null;
+        this.involucra = null;
     }
 
-    public Evento(TipoEvento tipo, int minuto, Partido partido){
+    public Evento(TipoEvento tipo, int minuto, Partido partido,  Jugador involucra){
         this.tipo = tipo;
         this.minuto = minuto;
         this.partido = partido;
+        this.involucra = involucra;
     }
 
     public TipoEvento getTipo(){
@@ -28,5 +36,13 @@ public class Evento{
 
     public Partido getPartido(){
         return partido;
+    }
+
+    public Jugador getInvolucra() {
+        return involucra;
+    }
+
+    public void setInvolucra(Jugador involucra) {
+        this.involucra = involucra;
     }
 }
