@@ -7,7 +7,7 @@ import edu.mundial.domain.organizacion.Pais;
  */
 public class Arbitro extends Persona {
     private int aniosExperiencia;
-    public Pais cuentaCon;
+    private Pais cuentaCon;
 
     /**
      * Constructor por defecto.
@@ -41,4 +41,5 @@ public class Arbitro extends Persona {
     public void setNacionalidad(Pais pais) {
         this.cuentaCon = pais;
     }
+
 }
