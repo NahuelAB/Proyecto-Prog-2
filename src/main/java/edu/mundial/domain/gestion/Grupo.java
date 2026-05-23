@@ -7,13 +7,13 @@ public class Grupo{
     private Fase fase;
 
     public Grupo(){
-        this.identificacion = null;
-        this.descripcion = null;
+        this("","", null);
     }
 
-    public Grupo(String identificacion, String descripcion){
+    public Grupo(String identificacion, String descripcion, Fase fase){
         this.identificacion = identificacion;
         this.descripcion = descripcion;
+        this.fase = fase;
     }
 
     // Implementación de la lógica sobre obtenerPuntos
