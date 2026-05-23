@@ -15,9 +15,9 @@ public class Arbitraje {
     }
 
     public Arbitraje(CategoriaArbitro categoria,  Arbitro arbitro, Partido partido){
-        this.categoria=categoria;
-        this.arbitro=arbitro;
-        this.partido=partido;
+        this.categoria = categoria;
+        this.arbitro = arbitro;
+        this.partido = partido;
     }
 
     public CategoriaArbitro getCategoria() {
