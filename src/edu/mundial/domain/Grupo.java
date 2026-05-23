@@ -1,24 +1,25 @@
-package edu.mundial.domain.gestion;
-import edu.mundial.domain.organizacion.Seleccion;
+package edu.mundial.domain;
+import edu.mundial.model.organizacion.Seleccion;
 
 public class Grupo{
     private String identificacion;
     private String descripcion;
-    private Fase fase;
 
     public Grupo(){
-        this("","", null);
+        this.identificacion = null;
+        this.descripcion = null;
     }
 
-    public Grupo(String identificacion, String descripcion, Fase fase){
+    public Grupo(String identificacion, String descripcion){
         this.identificacion = identificacion;
         this.descripcion = descripcion;
-        this.fase = fase;
     }
 
-    // Implementación de la lógica sobre obtenerPuntos
     public int obtenerPuntos(Seleccion s){
         int puntos = 0;
+
+    // Implementación de la lógica sobre obtenerPuntos
+
         return puntos;
     }
 

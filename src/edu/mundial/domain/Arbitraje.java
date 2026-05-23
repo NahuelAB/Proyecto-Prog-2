@@ -1,7 +1,8 @@
-package edu.mundial.domain.gestion;
+package edu.mundial.domain;
 
 import edu.mundial.enums.CategoriaArbitro;
-import edu.mundial.domain.persona.Arbitro;
+import edu.mundial.model.personas.Arbitro;
+import edu.mundial.domain.Partido;
 
 public class Arbitraje {
     private CategoriaArbitro categoria;
@@ -15,9 +16,9 @@ public class Arbitraje {
     }
 
     public Arbitraje(CategoriaArbitro categoria,  Arbitro arbitro, Partido partido){
-        this.categoria = categoria;
-        this.arbitro = arbitro;
-        this.partido = partido;
+        this.categoria=categoria;
+        this.arbitro=arbitro;
+        this.partido=partido;
     }
 
     public CategoriaArbitro getCategoria() {
