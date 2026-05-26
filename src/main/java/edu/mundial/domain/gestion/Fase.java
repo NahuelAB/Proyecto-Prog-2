@@ -4,6 +4,7 @@ import edu.mundial.enums.NombreFase;
 public class Fase {
     private NombreFase nombre;
 
+    //Getters y Setters
     public Fase(){
         this.nombre = null;
     }
