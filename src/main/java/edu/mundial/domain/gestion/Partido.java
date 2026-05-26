@@ -41,7 +41,6 @@ public class Partido{
     public LocalDate getFecha(){
         return fecha;
     }
-
     public void setFecha(LocalDate fecha){
         this.fecha = fecha;
     }
@@ -49,11 +48,11 @@ public class Partido{
     public LocalTime getHorario(){
         return horario;
     }
-
     public void setHorario(LocalTime horario){
         this.horario = horario;
     }
 
+    //No necesita de Setter debido a que es la duración del partido y debería ser Final una vez recibida.
     public int getDuracion(){
         return duracion;
     }
@@ -61,7 +60,6 @@ public class Partido{
     public int getTiempoAdicional(){
         return tiempoAdicional;
     }
-
     public void setTiempoAdicional(int tiempoAdicional) {
         if (tiempoAdicional >= 0) {
             this.tiempoAdicional = tiempoAdicional;
@@ -70,9 +68,14 @@ public class Partido{
 
     public List<Arbitraje> getArbitrajes() { return arbitrajes; }
 
-    public Estadio getSeDesarrollaEn() { return seDesarrollaEn; }
+    public List<Evento> getEventos(){
+        return eventos;
+    }
 
+    public Estadio getSeDesarrollaEn() { return seDesarrollaEn; }
     public void setSeDesarrollaEn(Estadio seDesarrollaEn) { this.seDesarrollaEn = seDesarrollaEn; }
+
+    //              ---Métodos---
 
     //Método para agregar eventos a la lista de eventos.
     public void nuevoEvento(TipoEvento tipo, int minuto, Jugador involucra){
@@ -85,13 +88,13 @@ public class Partido{
 
     //Método para agregar arbitros a la lista del partido.
     public void addArbitro(Arbitraje arbitro) {
+        /*
         if(this.arbitrajes == null){
             this.arbitrajes = new ArrayList<>();
         }
         this.arbitrajes.add(arbitro);
-    }
 
-    public List<Evento> getEventos(){
-        return eventos;
+        PREGUNTAR AL PROFESOR EN CASO DE 0 ARBITROS, YA QUE NO TIENE SENTIDO.
+        */
     }
 }
