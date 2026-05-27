@@ -86,7 +86,7 @@ public class Partido{
 
     //              ---Métodos---
 
-    //Método para agregar participaciones a la lista de participaciones.
+    //Metodo para agregar participaciones a la lista de participaciones.
 
     public void nuevaParticipacion(boolean esLocal, int cantidadGoles, int cantidadTarjAmarilla, int cantidadTarjRojas, Seleccion seleccion){
         if(this.participaciones == null) {
@@ -114,7 +114,7 @@ public class Partido{
         this.participaciones.add(participacion);
     }
 
-    //Método para agregar eventos a la lista de eventos.
+    //Metodo para agregar eventos a la lista de eventos.
     public void nuevoEvento(TipoEvento tipo, int minuto, Jugador involucra){
         if(this.eventos == null){
             this.eventos = new ArrayList<>();
@@ -125,7 +125,7 @@ public class Partido{
         this.eventos.add(evento);
     }
 
-    //Método para agregar arbitros a la lista del partido.
+    //Metodo para agregar arbitros a la lista del partido.
     public void addArbitro(Arbitraje arbitro) {
         /*
         if(this.arbitrajes == null){

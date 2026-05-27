@@ -34,7 +34,6 @@ public class Jugador extends Persona {
      * @param peso Peso en kilogramos.
      * @param altura Altura en metros.
      * @param integra Selección nacional a la que representa.
-     * @param
      */
     public Jugador(String nombre, int fecNacimiento, int dorsal, Posicion posicion, float peso, float altura, Seleccion integra) {
         super(nombre, fecNacimiento);
