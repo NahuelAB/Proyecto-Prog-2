@@ -12,6 +12,7 @@ public class Fase {
 
     //Relacion con Grupo
     private List<Grupo> grupo;
+    //Getters y Setters
     public Fase(){
         this(null);
     }
