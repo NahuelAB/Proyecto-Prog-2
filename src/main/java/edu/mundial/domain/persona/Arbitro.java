@@ -35,10 +35,11 @@ public class Arbitro extends Persona {
     public void setAniosExperiencia(int aniosExperiencia) {
         this.aniosExperiencia = aniosExperiencia;
     }
-    public Pais getNacionalidad() {
+
+    public Pais getCuentoCon() {
         return cuentaCon;
     }
-    public void setNacionalidad(Pais pais) {
+    public void setCuentaCon(Pais pais) {
         this.cuentaCon = pais;
     }
 

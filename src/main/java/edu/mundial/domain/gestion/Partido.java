@@ -74,7 +74,7 @@ public class Partido{
 
     public void setSeDesarrollaEn(Estadio seDesarrollaEn) { this.seDesarrollaEn = seDesarrollaEn; }
 
-    //Método para agregar eventos a la lista de eventos.
+    //Metodo para agregar eventos a la lista de eventos.
     public void nuevoEvento(TipoEvento tipo, int minuto, Jugador involucra){
         if(this.eventos == null){
             this.eventos = new ArrayList<>();
@@ -83,7 +83,7 @@ public class Partido{
         this.eventos.add(evento);
     }
 
-    //Método para agregar arbitros a la lista del partido.
+    //Metodo para agregar arbitros a la lista del partido.
     public void addArbitro(Arbitraje arbitro) {
         if(this.arbitrajes == null){
             this.arbitrajes = new ArrayList<>();

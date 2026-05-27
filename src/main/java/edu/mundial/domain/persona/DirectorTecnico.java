@@ -3,7 +3,7 @@ import edu.mundial.domain.organizacion.Seleccion;
 
 public class DirectorTecnico extends Persona {
     private int fechaNombramiento;
-    public Seleccion dirige;
+    private Seleccion dirige;
 
     /**
      * Constructor por defecto.
