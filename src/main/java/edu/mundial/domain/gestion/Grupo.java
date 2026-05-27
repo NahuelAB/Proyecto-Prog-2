@@ -4,6 +4,8 @@ import edu.mundial.domain.organizacion.Seleccion;
 public class Grupo{
     private String identificacion;
     private String descripcion;
+
+    // Relación con Fase
     private Fase fase;
 
     public Grupo(){
@@ -25,7 +27,6 @@ public class Grupo{
     public String getIdentificacion(){
         return identificacion;
     }
-
     public void setIdentificacion(String identificacion){
         this.identificacion = identificacion;
     }
@@ -33,8 +34,14 @@ public class Grupo{
     public String getDescripcion(){
         return descripcion;
     }
-
     public void setDescripcion(String descripcion){
         this.descripcion = descripcion;
+    }
+
+    public Fase getFase(){
+        return fase;
+    }
+    public void setFase(Fase fase){
+        this.fase = fase;
     }
 }
