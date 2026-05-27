@@ -86,7 +86,7 @@ public class Partido{
 
     //              ---Métodos---
 
-    //Método para agregar participaciones a la lista de participaciones.
+    //Metodo para agregar participaciones a la lista de participaciones.
 
     public void nuevaParticipacion(boolean esLocal, int cantidadGoles, int cantidadTarjAmarilla, int cantidadTarjRojas, Seleccion seleccion){
         if(this.participaciones == null) {
