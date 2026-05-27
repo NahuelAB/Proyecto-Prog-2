@@ -2,6 +2,7 @@ package edu.mundial.domain.gestion;
 
 import edu.mundial.domain.organizacion.Estadio;
 import edu.mundial.domain.gestion.Arbitraje;
+import edu.mundial.domain.organizacion.Seleccion;
 import edu.mundial.domain.persona.Arbitro;
 import edu.mundial.enums.TipoEvento;
 import edu.mundial.domain.persona.Jugador;
@@ -23,11 +24,13 @@ public class Partido{
 
     private List<Evento> eventos;
 
+    private List<Participacion> participaciones;
+
     public Partido(){
-        this(null, null, 0, 0, null, null, null);
+        this(null, null, 0, 0, null, null, null, null);
     }
 
-    public Partido(LocalDate fecha, LocalTime horario, int duracion, int tiempoAdicional, Estadio seDesarrollaEn, List<Arbitraje> arbitrajes, List<Evento> eventos){
+    public Partido(LocalDate fecha, LocalTime horario, int duracion, int tiempoAdicional, Estadio seDesarrollaEn, List<Arbitraje> arbitrajes, List<Evento> eventos, List<Participacion> participaciones){
         this.fecha = fecha;
         this.horario = horario;
         this.duracion = duracion;
@@ -35,6 +38,7 @@ public class Partido{
         this.seDesarrollaEn =  seDesarrollaEn;
         this.arbitrajes = arbitrajes;
         this.eventos = eventos;
+        this.participaciones = participaciones;
     }
 
     //Getters y Setters
@@ -66,23 +70,58 @@ public class Partido{
         }
     }
 
+    public Estadio getSeDesarrollaEn() { return seDesarrollaEn; }
+    public void setSeDesarrollaEn(Estadio seDesarrollaEn) { this.seDesarrollaEn = seDesarrollaEn; }
+
     public List<Arbitraje> getArbitrajes() { return arbitrajes; }
 
     public List<Evento> getEventos(){
         return eventos;
     }
 
-    public Estadio getSeDesarrollaEn() { return seDesarrollaEn; }
-    public void setSeDesarrollaEn(Estadio seDesarrollaEn) { this.seDesarrollaEn = seDesarrollaEn; }
+    //No necesita de Setter porque se podría editar de ésta forma y tener redundancia de participaciones.
+    public List<Participacion> getParticipaciones() {
+        return participaciones;
+    }
 
     //              ---Métodos---
+
+    //Método para agregar participaciones a la lista de participaciones.
+
+    public void nuevaParticipacion(boolean esLocal, int cantidadGoles, int cantidadTarjAmarilla, int cantidadTarjRojas, Seleccion seleccion){
+        if(this.participaciones == null) {
+            this.participaciones = new ArrayList<>();
+        }
+
+        //Chequeo de que solo haya 2 selecciones.
+        if(this.participaciones.size() >= 2){
+            return;
+        }
+
+        //Seguro contra repetición de selecciones y repetición de locales y visitantes.
+        for(Participacion p : participaciones){
+            if(p.getSeleccion().equals(seleccion)){
+                return;
+            }
+
+            if(p.isEsLocal() == esLocal){
+                return;
+            }
+        }
+
+        Participacion participacion = new Participacion(esLocal,cantidadGoles, cantidadTarjAmarilla, cantidadTarjRojas, seleccion);
+
+        this.participaciones.add(participacion);
+    }
 
     //Método para agregar eventos a la lista de eventos.
     public void nuevoEvento(TipoEvento tipo, int minuto, Jugador involucra){
         if(this.eventos == null){
             this.eventos = new ArrayList<>();
         }
+
         Evento evento = new Evento(tipo, minuto, this, involucra);
+
         this.eventos.add(evento);
     }
 
@@ -92,6 +131,7 @@ public class Partido{
         if(this.arbitrajes == null){
             this.arbitrajes = new ArrayList<>();
         }
+
         this.arbitrajes.add(arbitro);
 
         PREGUNTAR AL PROFESOR EN CASO DE 0 ARBITROS, YA QUE NO TIENE SENTIDO.
