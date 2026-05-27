@@ -1,20 +1,23 @@
 package edu.mundial.domain.organizacion;
+import edu.mundial.domain.gestion.Partido;
+import java.util.ArrayList;
 
 public class Estadio {
     private String nombre;
     private int capacidad;
     public Sede tiene;
+    private ArrayList<Partido> partidos;
 
     public Estadio() {
-        this.nombre = null;
-        this.capacidad = 0;
-        this.tiene = null;
+        this("", 0, null, new ArrayList<>());
+
     }
 
-    public Estadio(String nombre, int capacidad, Sede tiene) {
+    public Estadio(String nombre, int capacidad, Sede tiene, ArrayList<Partido> partidos) {
         this.nombre = nombre;
         this.capacidad = capacidad;
         this.tiene = tiene;
+        this.partidos = new ArrayList<>();
     }
 
     public String getNombre() {
@@ -36,5 +39,19 @@ public class Estadio {
     }
     public void setTiene(Sede tiene) {
         this.tiene = tiene;
+    }
+
+    public void setPartidos(ArrayList<Partido> partidos) {
+        this.partidos = partidos;
+    }
+    public void agregarPartidos(Partido partidos) {
+        this.partidos.add(partidos);
+    }
+    public void mostrarPartidos() {
+        System.out.println("Partidos en el estadio: ");
+
+        for(Partido i : partidos) {
+            System.out.println(i);
+        }
     }
 }

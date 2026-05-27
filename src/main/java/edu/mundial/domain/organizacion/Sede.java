@@ -1,5 +1,6 @@
 package edu.mundial.domain.organizacion;
 import edu.mundial.domain.gestion.Mundial;
+import java.util.ArrayList;
 
 public class Sede {
     private String ciudad;
@@ -8,23 +9,21 @@ public class Sede {
     private String zonaHoraria;
     public Pais pertenece;
     public Mundial mundial;
+    private ArrayList<Estadio> estadios;
+
 
     public Sede() {
-        this.ciudad = null;
-        this.alturaNivelMar = 0;
-        this.clima = null;
-        this.zonaHoraria = null;
-        this.pertenece = null;
-        this.mundial = null;
+        this("", 0, "", "", null, null, new ArrayList<>());
     }
 
-    public Sede(String ciudad, float alturaNivelMar, String clima, String zonaHoraria, Pais pertenece, Mundial mundial) {
+    public Sede(String ciudad, float alturaNivelMar, String clima, String zonaHoraria, Pais pertenece, Mundial mundial, ArrayList<Estadio> estadios) {
         this.ciudad = ciudad;
         this.alturaNivelMar = alturaNivelMar;
         this.clima = clima;
         this.zonaHoraria = zonaHoraria;
         this.pertenece = pertenece;
         this.mundial = mundial;
+        this.estadios = new ArrayList<>();
     }
 
     public String getCiudad() {
@@ -67,5 +66,19 @@ public class Sede {
     }
     public void setMundial(Mundial mundial) {
         this.mundial = mundial;
+    }
+
+    public void setEstadios(ArrayList<Estadio> estadios) {
+        this.estadios = estadios;
+    }
+    public void agregarEstadios(Estadio estadios) {
+        this.estadios.add(estadios);
+    }
+    public void mostrarEstadios() {
+        System.out.println("Estadios de la sede: ");
+
+        for(Estadio i : estadios) {
+            System.out.println(i);
+        }
     }
 }
