@@ -23,8 +23,8 @@ public class Pais {
         this.nombre = nombre;
         this.bandera = bandera;
         this.representa = representa;
-        this.sedes = new ArrayList<>();
-        this.arbitros = new ArrayList<>();
+        this.sedes = sedes;
+        this.arbitros = arbitros;
     }
 
     public String getNombre() {
@@ -51,8 +51,12 @@ public class Pais {
     public void setSedes(ArrayList<Sede> sedes) {
         this.sedes = sedes;
     }
-    public void agregarSedes(Sede sedes) {
-        this.sedes.add(sedes);
+    public void agregarSedes(Sede sede) {
+        if(this.sedes == null) {
+            this.sedes = new ArrayList<>();
+        }
+
+        this.sedes.add(sede);
     }
     public void mostrarSedes() {
         System.out.println("Sed(es) del pais: ");
@@ -65,8 +69,12 @@ public class Pais {
     public void setArbitros(ArrayList<Arbitro> arbitros) {
         this.arbitros = arbitros;
     }
-    public void agregarArbitros(Arbitro arbitros) {
-        this.arbitros.add(arbitros);
+    public void agregarArbitro(Arbitro arbitro) {
+        if (this.arbitros == null) {
+            this.arbitros = new ArrayList<>();
+        }
+
+        this.arbitros.add(arbitro);
     }
     public void mostrarArbitros() {
         System.out.println("Arbitro(s) del pais: ");

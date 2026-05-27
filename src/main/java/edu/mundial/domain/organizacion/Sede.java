@@ -23,7 +23,7 @@ public class Sede {
         this.zonaHoraria = zonaHoraria;
         this.pertenece = pertenece;
         this.mundial = mundial;
-        this.estadios = new ArrayList<>();
+        this.estadios = estadios;
     }
 
     public String getCiudad() {
@@ -71,8 +71,11 @@ public class Sede {
     public void setEstadios(ArrayList<Estadio> estadios) {
         this.estadios = estadios;
     }
-    public void agregarEstadios(Estadio estadios) {
-        this.estadios.add(estadios);
+    public void agregarEstadio(Estadio estadio) {
+        if(this.estadios == null) {
+            this.estadios = new ArrayList<>();
+        }
+        this.estadios.add(estadio);
     }
     public void mostrarEstadios() {
         System.out.println("Estadios de la sede: ");

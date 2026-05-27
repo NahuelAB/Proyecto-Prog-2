@@ -17,7 +17,7 @@ public class Estadio {
         this.nombre = nombre;
         this.capacidad = capacidad;
         this.tiene = tiene;
-        this.partidos = new ArrayList<>();
+        this.partidos = partidos;
     }
 
     public String getNombre() {
@@ -44,7 +44,11 @@ public class Estadio {
     public void setPartidos(ArrayList<Partido> partidos) {
         this.partidos = partidos;
     }
-    public void agregarPartidos(Partido partidos) {
+    public void agregarPartido(Partido partidos) {
+        if(this.partidos == null) {
+            this.partidos = new ArrayList<>();
+        }
+
         this.partidos.add(partidos);
     }
     public void mostrarPartidos() {

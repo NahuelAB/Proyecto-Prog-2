@@ -14,7 +14,7 @@ public class Seleccion {
     private ArrayList<DirectorTecnico> directoresTecnicos;
     private ArrayList<CuerpoTecnico> cuerpoTecnico;
     private ArrayList<Jugador> jugadores;
-    private ArrayList<Partido> partidos;
+    private ArrayList<Participacion> participaciones;
 
     public Seleccion() {
         this("", "", "", false, 0, null, null, new ArrayList<>(), new ArrayList<>(), new ArrayList<>(), new ArrayList<>());
@@ -22,7 +22,7 @@ public class Seleccion {
 
     public Seleccion(String nombreFederacion, String camisetaPrincipal, String camisetaSecundaria, 
         boolean cabezaGrupo, int rankingFIFA, Pais representa, Grupo incluye, ArrayList<DirectorTecnico> directoresTecnicos,
-        ArrayList<CuerpoTecnico> cuerpoTecnico, ArrayList<Jugador> jugadores, ArrayList<Partido> partidos) {
+        ArrayList<CuerpoTecnico> cuerpoTecnico, ArrayList<Jugador> jugadores, ArrayList<Participacion> participaciones) {
         this.nombreFederacion = nombreFederacion;
         this.camisetaPrincipal = camisetaPrincipal;
         this.camisetaSecundaria = camisetaSecundaria;
@@ -30,10 +30,10 @@ public class Seleccion {
         this.rankingFIFA = rankingFIFA;
         this.representa = representa;
         this.incluye = incluye;
-        this.directoresTecnicos = new ArrayList<>();
-        this.cuerpoTecnico = new ArrayList<>();
-        this.jugadores = new ArrayList<>();
-        this.partidos = new ArrayList<>();
+        this.directoresTecnicos = directoresTecnicos;
+        this.cuerpoTecnico = cuerpoTecnico;
+        this.jugadores = jugadores;
+        this.participaciones = participaciones;
     }
 
     public String getNombreFederacion() {
@@ -88,8 +88,11 @@ public class Seleccion {
     public void setDirectoresTecnicos(ArrayList<DirectorTecnico> directoresTecnicos) {
         this.directoresTecnicos = directoresTecnicos;
     }
-    public void agregarDirectoresTecnicos(DirectorTecnico directoresTecnicos) {
-        this.directoresTecnicos.add(directoresTecnicos);
+    public void agregarDirectorTecnico(DirectorTecnico directorTecnico) {
+        if (this.directoresTecnicos == null) {
+            this.directoresTecnicos = new ArrayList<>();
+        }
+        this.directoresTecnicos.add(directorTecnico);
     }
     public void mostrarDirectoresTecnicos() {
         System.out.println("Director(es) tecnico(s) de la seleccion: ");
@@ -103,6 +106,10 @@ public class Seleccion {
         this.cuerpoTecnico = cuerpoTecnico;
     }
     public void agregarCuerpoTecnico(CuerpoTecnico cuerpoTecnico) {
+        if (this.cuerpoTecnico == null) {
+            this.cuerpoTecnico = new ArrayList<>();
+        }
+
         this.cuerpoTecnico.add(cuerpoTecnico);
     }
     public void mostrarCuerpoTecnico() {
@@ -116,8 +123,12 @@ public class Seleccion {
     public void setJugadores(ArrayList<Jugador> jugadores) {
         this.jugadores = jugadores;
     }
-    public void agregarJugadores(Jugador jugadores) {
-        this.jugadores.add(jugadores);
+    public void agregarJugador(Jugador jugador) {
+        if (this.jugadores == null) {
+            this.jugadores = new ArrayList<>();
+        }
+
+        this.jugadores.add(jugador);
     }
     public void mostrarJugadores() {
         System.out.println("Jugadores de la seleccion: ");
@@ -127,18 +138,22 @@ public class Seleccion {
         }
     }
 
-    public void setPartidos(ArrayList<Partido> partidos) {
-        this.partidos = partidos;
+    public void setParticipaciones(ArrayList<Participacion> participaciones) {
+        this.participaciones = participaciones;
     }
-    public void agregarPartidos(Partido partidos) {
-        this.partidos.add(partidos);
+    public void agregarParticipacion(Participacion participacion) {
+        if (this.participaciones == null) {
+            this.participaciones = new ArrayList<>();
+        }
+
+        this.participaciones.add(participacion);
     }
+    public void mostrarParticipaciones() {
+        System.out.println("Participaciones de la seleccion: ");
 
-    public void mostrarPartidos() {
-        System.out.println("Partidos de la seleccion: ");
-
-        for (Partido i : partidos) {
+        for (Participacion i : participaciones) {
             System.out.println(i);
         }
     }
+
 }
