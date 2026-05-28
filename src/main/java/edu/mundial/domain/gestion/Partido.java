@@ -1,9 +1,7 @@
 package edu.mundial.domain.gestion;
 
 import edu.mundial.domain.organizacion.Estadio;
-import edu.mundial.domain.gestion.Arbitraje;
 import edu.mundial.domain.organizacion.Seleccion;
-import edu.mundial.domain.persona.Arbitro;
 import edu.mundial.enums.TipoEvento;
 import edu.mundial.domain.persona.Jugador;
 
@@ -18,19 +16,18 @@ public class Partido{
     private int duracion;
     private int tiempoAdicional;
 
-    private Estadio seDesarrollaEn;
-
+    //Relaciones
+    public Estadio seDesarrollaEn;
     private List<Arbitraje> arbitrajes;
-
     private List<Evento> eventos;
-
     private List<Participacion> participaciones;
+    public Fase corresponde;
 
     public Partido(){
-        this(null, null, 0, 0, null, null, null, null);
+        this(null, null, 0, 0, null, null, null, null, null);
     }
 
-    public Partido(LocalDate fecha, LocalTime horario, int duracion, int tiempoAdicional, Estadio seDesarrollaEn, List<Arbitraje> arbitrajes, List<Evento> eventos, List<Participacion> participaciones){
+    public Partido(LocalDate fecha, LocalTime horario, int duracion, int tiempoAdicional, Estadio seDesarrollaEn, List<Arbitraje> arbitrajes, List<Evento> eventos, List<Participacion> participaciones, Fase corresponde){
         this.fecha = fecha;
         this.horario = horario;
         this.duracion = duracion;
@@ -39,6 +36,7 @@ public class Partido{
         this.arbitrajes = arbitrajes;
         this.eventos = eventos;
         this.participaciones = participaciones;
+        this.corresponde = corresponde;
     }
 
     //Getters y Setters
@@ -84,10 +82,17 @@ public class Partido{
         return participaciones;
     }
 
+    //PREGUNTAR SI HACE FALTA DEJAR EL GETTER Y SETTER DE CORRESPONDE; ES PUBLIC IGUALMENTE...
+    public Fase getCorresponde(){
+        return corresponde;
+    }
+    public void setCorresponde(Fase corresponde){
+        this.corresponde = corresponde;
+    }
+
     //              ---Métodos---
 
     //Metodo para agregar participaciones a la lista de participaciones.
-
     public void nuevaParticipacion(boolean esLocal, int cantidadGoles, int cantidadTarjAmarilla, int cantidadTarjRojas, Seleccion seleccion){
         if(this.participaciones == null) {
             this.participaciones = new ArrayList<>();

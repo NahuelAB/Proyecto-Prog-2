@@ -8,18 +8,18 @@ public class Grupo{
     private String identificacion;
     private String descripcion;
 
-    private Fase fase;
-
-    private List<Seleccion> seAgrupa;
+    //Relaciones
+    public Fase incluye;
+    public List<Seleccion> seAgrupa;
 
     public Grupo(){
         this("","", null, null);
     }
 
-    public Grupo(String identificacion, String descripcion, Fase fase, List<Seleccion> seAgrupa){
+    public Grupo(String identificacion, String descripcion, Fase incluye, List<Seleccion> seAgrupa){
         this.identificacion = identificacion;
         this.descripcion = descripcion;
-        this.fase = fase;
+        this.incluye = incluye;
         this.seAgrupa = seAgrupa;
     }
 
@@ -38,11 +38,12 @@ public class Grupo{
         this.descripcion = descripcion;
     }
 
-    public Fase getFase(){
-        return fase;
+    //PREGUNTAR SI HACE FALTA DEJAR EL GETTER Y SETTER DE INCLUYE; ES PUBLIC IGUALMENTE...
+    public Fase getIncluye(){
+        return incluye;
     }
-    public void setFase(Fase fase){
-        this.fase = fase;
+    public void setIncluye(Fase incluye){
+        this.incluye = incluye;
     }
 
     //No requiere un setter debido a que se administran las selecciones con el metodo seAgrupa.

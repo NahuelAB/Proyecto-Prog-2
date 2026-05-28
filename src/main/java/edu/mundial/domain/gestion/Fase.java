@@ -7,46 +7,72 @@ import java.util.List;
 public class Fase {
     private NombreFase nombre;
 
-    // Relación con Partido
-    private List<Partido> corresponde;
+    //Relaciones
+    public List<Partido> corresponde;
+    public List<Grupo> incluye;
 
-    //Relacion con Grupo
-    private List<Grupo> grupo;
-    //Getters y Setters
-    public Fase(){
-        this(null);
+    public Fase() {
+        this(null, null, null);
     }
-    
-    public Fase(NombreFase nombre){
+
+    public Fase(NombreFase nombre, Partido corresponde, Grupo incluye) {
         this.nombre = nombre;
         this.corresponde = new ArrayList<Partido>();
-        this.grupo = new ArrayList<Grupo>();
+        this.incluye = new ArrayList<Grupo>();
     }
 
-    public NombreFase getNombre(){
+    //Getters y Setters
+    public NombreFase getNombre() {
         return nombre;
     }
-    public void setNombre(NombreFase nombre){
+
+    public void setNombre(NombreFase nombre) {
         this.nombre = nombre;
     }
 
-    public void addPartido(Partido partido){
-        this.corresponde.add(partido);
-    }
-    public List<Partido> getCorresponde(){
+    //PREGUNTAR SI HACE FALTA DEJAR EL GETTER Y SETTER DE CORRESPONDE E INCLUYE; ES PUBLIC IGUALMENTE EN AMBOS CASOS...
+    public List<Partido> getCorresponde() {
         return corresponde;
     }
-    public void setCorresponde(List<Partido> corresponde){
+
+    public void setCorresponde(List<Partido> corresponde) {
         this.corresponde = corresponde;
     }
 
-    public void addGrupo(Grupo grupo){
-        this.grupo.add(grupo);
+    public List<Grupo> getIncluye() {
+        return incluye;
     }
-    public List<Grupo> getGrupo(){
-        return grupo;
+
+    public void setIncluye(List<Grupo> incluye) {
+        this.incluye = incluye;
     }
-    public void setGrupo(List<Grupo> grupo){
-        this.grupo = grupo;
+
+    //              ---Métodos---
+
+    //Metodo para agregar partidos a la lista de fases.
+    public void addPartido(Partido partido) {
+        //Seguro contra lista nula...
+        if(this.corresponde == null){
+            this.corresponde = new ArrayList<>();
+        }
+
+        if(!this.corresponde.contains(partido)){
+            this.corresponde.add(partido);
+            partido.setCorresponde(this);
+        }
     }
+
+    //Metodo para agregar grupos a la lista de fases.
+    public void addGrupo(Grupo grupo) {
+        //Seguro contra lista nula...
+        if(this.incluye == null){
+            this.incluye = new ArrayList<>();
+        }
+
+        if (!this.incluye.contains(grupo)) {
+            this.incluye.add(grupo);
+            grupo.setIncluye(this);
+        }
+    }
+    //Ámbos funcionan para corroborar que tanto los grupos como los partidos están actualizados y se los agrega en el mismo momento de la llamada al metodo.
 }
