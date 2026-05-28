@@ -7,8 +7,17 @@ import edu.mundial.enums.TipoEvento;
 import edu.mundial.domain.persona.Jugador;
 import java.util.List;
 
+/**
+ * Clase encargada de generar reportes sobre las sanciones disciplinarias (tarjetas)
+ * ocurridas durante el torneo, permitiendo filtrar por jugador o por selección nacional.
+ */
 public class InformeDisciplinario{
 
+    /**
+     * Genera y muestra por consola el listado de tarjetas recibidas por un jugador específico.
+     * @param partidos Lista global de partidos donde se buscarán los eventos.
+     * @param jugador El jugador sobre el cual se desea obtener el informe.
+     */
     // Reporte Disciplinario por Jugador
     public void generarReportPorJugador(List<Partido> partidos, Jugador jugador){
         System.out.println("------------------------");
@@ -27,6 +36,12 @@ public class InformeDisciplinario{
         }
     }
 
+    /**
+     * Genera y muestra por consola el listado de tarjetas recibidas por todos los integrantes
+     * de una selección determinada.
+     * @param partidos Lista global de partidos donde se buscarán los eventos.
+     * @param seleccion La selección nacional sobre la cual se genera el informe.
+     */
     public void generarReportPorSeleccion(List<Partido> partidos, Seleccion seleccion){
         System.out.println("------------------------");
         System.out.println("Reporte de disciplinario: Seleccion de " + seleccion.getNombreFederacion());
@@ -42,11 +57,20 @@ public class InformeDisciplinario{
             }
         }
     }
-    // Metodo auxiliar para evitar repetir código
+    /**
+     * Determina si un tipo de evento corresponde a una sanción disciplinaria.
+     * Incluye Tarjeta Amarilla, Tarjeta Roja y Doble Amarilla.
+     * @param tipo El tipo de evento a evaluar.
+     * @return true si es una tarjeta, false en caso contrario.
+     */
     public boolean esTarjeta(TipoEvento tipo){
-        return tipo == TipoEvento.TarjetaAmarilla || tipo == TipoEvento.TarjetaRoja;
+        return tipo == TipoEvento.TarjetaAmarilla || tipo == TipoEvento.TarjetaRoja || tipo == TipoEvento.DobleAmarilla;
     }
-    // Metodo auxiliar para evitar repetir código
+
+    /**
+     * Metodo auxiliar para estandarizar la salida de los eventos sancionatorios por consola.
+     * @param evento El objeto evento que contiene la información de la tarjeta.
+     */
     public void imprimirEvento(Evento evento){
         System.out.println("Jugador: " + evento.getInvolucra().getNombre());
         System.out.println("Sancion: " + evento.getTipo());

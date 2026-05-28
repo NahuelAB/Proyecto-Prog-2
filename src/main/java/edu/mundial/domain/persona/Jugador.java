@@ -88,7 +88,7 @@ public class Jugador extends Persona {
     public List<Evento> getEventos() {
         return eventos;
     }
-    public void addEventos(Evento evento) {
+    public void addEventos(Evento evento) {  //Metodo para agregar eventos a un jugador ex: Gol, tarjeta amarilla, etc.
         if (this.eventos == null){
             this.eventos = new ArrayList<>();
         }
