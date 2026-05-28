@@ -4,11 +4,14 @@ import edu.mundial.domain.organizacion.Seleccion;
 
 public class CuerpoTecnico extends Persona {
     private Rol rol;
+
+    // Relación con Selección
     private Seleccion seleccion;
 
     public CuerpoTecnico(){
         this("", 0, null, null);
     }
+
     public CuerpoTecnico(String nombre, int fecNacimiento, Rol rol,  Seleccion seleccion){
         super(nombre, fecNacimiento);
         this.rol = rol;
@@ -20,6 +23,7 @@ public class CuerpoTecnico extends Persona {
     public void setRol(Rol rol) {
         this.rol = rol;
     }
+
     public Seleccion getSeleccion() {
         return seleccion;
     }

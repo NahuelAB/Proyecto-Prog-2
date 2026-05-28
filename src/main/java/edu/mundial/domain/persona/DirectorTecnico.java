@@ -3,6 +3,8 @@ import edu.mundial.domain.organizacion.Seleccion;
 
 public class DirectorTecnico extends Persona {
     private int fechaNombramiento;
+
+    // Relación con Selección
     private Seleccion dirige;
 
     /**
@@ -21,7 +23,6 @@ public class DirectorTecnico extends Persona {
     public int getFechaNombramiento() {
         return fechaNombramiento;
     }
-
     public void setFechaNombramiento(int fechaNombramiento) {
         this.fechaNombramiento = fechaNombramiento;
     }
@@ -29,7 +30,6 @@ public class DirectorTecnico extends Persona {
     public Seleccion getDirige() {
         return dirige;
     }
-
     public void setDirige(Seleccion dirige) {
         this.dirige = dirige;
     }
