@@ -15,7 +15,11 @@ public class Jugador extends Persona {
     private Posicion posicion;
     private float peso;
     private float altura;
+
+    // Relación con Selección
     private Seleccion integra;
+
+    // Relación con Eventos
     private List<Evento> eventos;
 
     /**
@@ -49,7 +53,6 @@ public class Jugador extends Persona {
     public int getDorsal() {
         return dorsal;
     }
-
     public void setDorsal(int dorsal) {
         this.dorsal = dorsal;
     }
@@ -57,7 +60,6 @@ public class Jugador extends Persona {
     public Posicion getPosicion() {
         return posicion;
     }
-
     public void setPosicion(Posicion posicion) {
         this.posicion = posicion;
     }
@@ -65,7 +67,6 @@ public class Jugador extends Persona {
     public float getPeso() {
         return peso;
     }
-
     public void setPeso(float peso) {
         this.peso = peso;
     }
@@ -73,7 +74,6 @@ public class Jugador extends Persona {
     public float getAltura() {
         return altura;
     }
-
     public void setAltura(float altura) {
         this.altura = altura;
     }
@@ -81,7 +81,6 @@ public class Jugador extends Persona {
     public Seleccion getIntegra() {
         return integra;
     }
-
     public void setIntegra(Seleccion integra) {
         this.integra = integra;
     }
@@ -89,7 +88,6 @@ public class Jugador extends Persona {
     public List<Evento> getEventos() {
         return eventos;
     }
-
     public void addEventos(Evento evento) {
         if (this.eventos == null){
             this.eventos = new ArrayList<>();

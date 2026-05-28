@@ -7,6 +7,8 @@ import edu.mundial.domain.organizacion.Pais;
  */
 public class Arbitro extends Persona {
     private int aniosExperiencia;
+
+    // Relación con País
     private Pais cuentaCon;
 
     /**
