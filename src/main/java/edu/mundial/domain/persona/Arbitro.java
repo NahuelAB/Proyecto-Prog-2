@@ -2,7 +2,7 @@ package edu.mundial.domain.persona;
 import edu.mundial.domain.organizacion.Pais;
 
 /**
- * Representa la autoridad encargada de dirigir una competición y aplicar el reglamento oficial.
+ * Representa la autoridad encargada de dirigir un partido y aplicar el reglamento oficial.
  * Contiene la informacion sobre sus años de experiencia y su nacionalidad.
  */
 public class Arbitro extends Persona {
@@ -38,7 +38,7 @@ public class Arbitro extends Persona {
         this.aniosExperiencia = aniosExperiencia;
     }
 
-    public Pais getCuentoCon() {
+    public Pais getCuentaCon() {
         return cuentaCon;
     }
     public void setCuentaCon(Pais pais) {
