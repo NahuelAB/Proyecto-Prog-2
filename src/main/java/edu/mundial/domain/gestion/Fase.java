@@ -15,10 +15,10 @@ public class Fase {
         this(null, null, null);
     }
 
-    public Fase(NombreFase nombre, Partido corresponde, Grupo incluye) {
+    public Fase(NombreFase nombre, List<Partido> corresponde, List<Grupo> incluye) {
         this.nombre = nombre;
-        this.corresponde = new ArrayList<Partido>();
-        this.incluye = new ArrayList<Grupo>();
+        this.corresponde = corresponde;
+        this.incluye = incluye;
     }
 
     //Getters y Setters
@@ -51,7 +51,10 @@ public class Fase {
 
     //Metodo para agregar partidos a la lista de fases.
     public void addPartido(Partido partido) {
-        //Seguro contra lista nula...
+        //Seguros contra llamadas fuera del metodo y dentro del metodo (en caso de lista nula).
+        if(partido == null){
+            return;
+        }
         if(this.corresponde == null){
             this.corresponde = new ArrayList<>();
         }
@@ -64,7 +67,10 @@ public class Fase {
 
     //Metodo para agregar grupos a la lista de fases.
     public void addGrupo(Grupo grupo) {
-        //Seguro contra lista nula...
+        //Seguros contra llamadas fuera del metodo y dentro del metodo (en caso de lista nula).
+        if(grupo == null){
+            return;
+        }
         if(this.incluye == null){
             this.incluye = new ArrayList<>();
         }

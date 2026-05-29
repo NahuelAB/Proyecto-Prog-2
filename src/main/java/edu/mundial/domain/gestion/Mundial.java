@@ -11,21 +11,22 @@ public class Mundial {
     private int fechaDesde;
     private int fechaHasta;
 
-    // Relación con Sede
+    // Relaciones
     private List<Sede> sedes;
 
     public Mundial(){
-        this(0, null, 0, 0);
+        this(0, null, 0, 0, null);
     }
 
-    public Mundial(int anio, String mascota, int fechaDesde, int fechaHasta){
+    public Mundial(int anio, String mascota, int fechaDesde, int fechaHasta, List<Sede> sedes){
         this.anio = anio;
         this.mascota = mascota;
         this.fechaDesde = fechaDesde;
         this.fechaHasta = fechaHasta;
-        this.sedes = new ArrayList<>();
+        this.sedes = sedes;
     }
 
+    //Getters y Setters
     public int getAnio(){
         return anio;
     }
@@ -54,13 +55,31 @@ public class Mundial {
         this.fechaHasta = fechaHasta;
     }
 
-    public void addSede(Sede sede){
-        this.sedes.add(sede);
-    }
     public List<Sede> getSedes(){
         return sedes;
     }
     public void setSedes(List<Sede> sedes){
         this.sedes = sedes;
+    }
+
+    //              ---Métodos---
+
+    //Metodo para agregar sedes a su lista.
+    public void addSede(Sede sede){
+        //Seguros contra llamadas fuera del metodo y dentro del metodo (en caso de lista nula).
+        if(sede == null){
+            return;
+        }
+        if(this.sedes == null) {
+            this.sedes = new ArrayList<>();
+        }
+
+        //Seguro contra duplicados.
+        if(this.sedes.contains(sede)){
+            return;
+        }
+
+        this.sedes.add(sede);
+        sede.setMundial(this);
     }
 }

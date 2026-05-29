@@ -94,6 +94,16 @@ public class Partido{
 
     //Metodo para agregar participaciones a la lista de participaciones.
     public void nuevaParticipacion(boolean esLocal, int cantidadGoles, int cantidadTarjAmarilla, int cantidadTarjRojas, Seleccion seleccion){
+        //Seguro contra seleccion nula.
+        if(seleccion == null){
+            return;
+        }
+
+        //Seguro contra estadísticas negativas.
+        if(cantidadGoles < 0 || cantidadTarjAmarilla < 0 || cantidadTarjRojas < 0){
+            return;
+        }
+
         if(this.participaciones == null) {
             this.participaciones = new ArrayList<>();
         }
@@ -103,12 +113,11 @@ public class Partido{
             return;
         }
 
-        //Seguro contra repetición de selecciones y repetición de locales y visitantes.
+        //Seguro contra repetición de selecciones o repetición de locales/visitantes.
         for(Participacion p : participaciones){
             if(p.getSeleccion().equals(seleccion)){
                 return;
             }
-
             if(p.isEsLocal() == esLocal){
                 return;
             }
@@ -121,6 +130,10 @@ public class Partido{
 
     //Metodo para agregar eventos a la lista de eventos.
     public void nuevoEvento(TipoEvento tipo, int minuto, Jugador involucra){
+        //Validación en caso de que tipo de evento o jugador involucrado sean nulos y en caso de lista nula.
+        if(tipo == null || involucra == null){
+            return;
+        }
         if(this.eventos == null){
             this.eventos = new ArrayList<>();
         }
@@ -132,14 +145,19 @@ public class Partido{
 
     //Metodo para agregar arbitros a la lista del partido.
     public void addArbitro(Arbitraje arbitro) {
-        /*
+        //Chequeo en caso de arbitro nulo o lista nula, así como de arbitros "duplicados".
+        if(arbitro == null){
+            return;
+        }
         if(this.arbitrajes == null){
             this.arbitrajes = new ArrayList<>();
         }
+        if(this.arbitrajes.contains(arbitro)){
+            return;
+        }
 
         this.arbitrajes.add(arbitro);
-
-        PREGUNTAR AL PROFESOR EN CASO DE 0 ARBITROS, YA QUE NO TIENE SENTIDO.
-        */
+        arbitro.setPartido(this);
+        //PREGUNTAR AL PROFESOR EN CASO DE 0 ARBITROS, YA QUE NO TIENE SENTIDO.
     }
 }

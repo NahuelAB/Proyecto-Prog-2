@@ -62,6 +62,10 @@ public class Grupo{
 
     //Metodo para obtener las selecicones participantes en el grupo.
     public void seAgrupa(Seleccion seleccion){
+        //Seguros contra llamadas fuera del metodo y dentro del metodo (en caso de lista nula).
+        if(seleccion == null){
+            return;
+        }
         if(this.seAgrupa == null){
             this.seAgrupa = new ArrayList<>();
         }

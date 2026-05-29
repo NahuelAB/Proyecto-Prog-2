@@ -10,13 +10,12 @@ public class Evento{
     private TipoEvento tipo;
     private int minuto;
     private Partido partido;
-    private Jugador involucra;
+
+    //Relaciones
+    public Jugador involucra;
 
     public Evento(){
-        this.tipo = null;
-        this.minuto = 0;
-        this.partido = null;
-        this.involucra = null;
+        this(null, 0, null, null);
     }
 
     public Evento(TipoEvento tipo, int minuto, Partido partido,  Jugador involucra){
@@ -26,6 +25,7 @@ public class Evento{
         this.involucra = involucra;
     }
 
+    //Getters y Setters
     public TipoEvento getTipo(){
         return tipo;
     }
@@ -41,7 +41,6 @@ public class Evento{
     public Jugador getInvolucra() {
         return involucra;
     }
-
     public void setInvolucra(Jugador involucra) {
         this.involucra = involucra;
     }
