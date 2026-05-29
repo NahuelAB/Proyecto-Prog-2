@@ -8,7 +8,7 @@ public class Sede {
     private String clima;
     private String zonaHoraria;
     public Pais pertenece;
-    public Mundial mundial;
+    private Mundial mundial;
     private ArrayList<Estadio> estadios;
 
 
