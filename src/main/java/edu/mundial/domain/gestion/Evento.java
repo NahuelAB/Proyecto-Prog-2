@@ -18,7 +18,7 @@ public class Evento{
         this(null, 0, null, null);
     }
 
-    public Evento(TipoEvento tipo, int minuto, Partido partido,  Jugador involucra){
+    public Evento(TipoEvento tipo, int minuto, Partido partido, Jugador involucra){
         this.tipo = tipo;
         this.minuto = minuto;
         this.partido = partido;
