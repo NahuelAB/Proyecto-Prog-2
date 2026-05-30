@@ -2,31 +2,39 @@ package edu.mundial.domain.organizacion;
 import java.util.ArrayList;
 import edu.mundial.domain.persona.Arbitro;
 
+//REPRESENTA UN PAIS PARTICIPANTE DEL MUNDIAL
+
 public class Pais {
+
+    //Atributos
     private String nombre;
     private String bandera;
-    public Seleccion representa;
-    private ArrayList<Sede> sedes;
-    private ArrayList<Arbitro> arbitros;
+
+    //Relaciones
+    private Seleccion seleccion; //Asociacion: un pais es representado por una unica seleccion
+    private ArrayList<Sede> sedes; //Asociacion: un pais puede tener cero o mas sedes
+    private ArrayList<Arbitro> arbitros; //Asociacion: un pais puede tener cero o mas arbitros nativos
     
    
     public Pais() {
         this("", "");
     }
 
-    public Pais(String nombre, String bandera) {
+    public Pais(String nombre, String bandera) { //Constructor para paises sin seleccion
         this.nombre = nombre;
         this.bandera = bandera;
     }
 
-    public Pais(String nombre, String bandera, Seleccion representa, ArrayList<Sede> sedes, ArrayList<Arbitro> arbitros) {
+    public Pais(String nombre, String bandera, Seleccion seleccion, ArrayList<Sede> sedes, 
+        ArrayList<Arbitro> arbitros) { //Constructor para paises con seleccion
         this.nombre = nombre;
         this.bandera = bandera;
-        this.representa = representa;
+        this.seleccion = seleccion;
         this.sedes = sedes;
         this.arbitros = arbitros;
     }
 
+    //Getters y Setters
     public String getNombre() {
         return nombre;
     }
@@ -41,16 +49,15 @@ public class Pais {
         this.bandera = bandera;
     }
 
-    public Seleccion getRepresenta() {
-        return representa;
+    public Seleccion getSeleccion() {
+        return seleccion;
     }
-    public void setRepresenta(Seleccion representa) {
-        this.representa = representa;
+    public void setSeleccion(Seleccion seleccion) {
+        this.seleccion = seleccion;
     }
 
-    public void setSedes(ArrayList<Sede> sedes) {
-        this.sedes = sedes;
-    }
+
+    //Se utiliza agregarSedes() para incorporar nuevos partidos en lugar de un Setter
     public void agregarSedes(Sede sede) {
         if(this.sedes == null) {
             this.sedes = new ArrayList<>();
@@ -66,9 +73,7 @@ public class Pais {
         }
     }
 
-    public void setArbitros(ArrayList<Arbitro> arbitros) {
-        this.arbitros = arbitros;
-    }
+    //Se utiliza agregarArbitro() para incorporar nuevos partidos en lugar de un Setter
     public void agregarArbitro(Arbitro arbitro) {
         if (this.arbitros == null) {
             this.arbitros = new ArrayList<>();

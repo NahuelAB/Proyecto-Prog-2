@@ -2,26 +2,32 @@ package edu.mundial.domain.organizacion;
 import edu.mundial.domain.gestion.Mundial;
 import java.util.ArrayList;
 
+//REPRESENTA UNA SEDE DONDE SE DISPUTARA EL MUNDIAL
 public class Sede {
+
+    //Atributos
     private String ciudad;
     private float alturaNivelMar;
     private String clima;
     private String zonaHoraria;
-    public Pais pertenece;
-    private Mundial mundial;
-    private ArrayList<Estadio> estadios;
+
+    //Relaciones
+    private Pais pais; //Asociacion: una sede esta ubicada en un unico pais
+    private Mundial mundial; //Asociacion: una sede pertenece a un unico mundial
+    private ArrayList<Estadio> estadios; //Asociacion: una sede tiene 1 o mas estadios
 
 
     public Sede() {
         this("", 0, "", "", null, null, new ArrayList<>());
     }
 
-    public Sede(String ciudad, float alturaNivelMar, String clima, String zonaHoraria, Pais pertenece, Mundial mundial, ArrayList<Estadio> estadios) {
+    public Sede(String ciudad, float alturaNivelMar, String clima, String zonaHoraria, 
+        Pais pais, Mundial mundial, ArrayList<Estadio> estadios) {
         this.ciudad = ciudad;
         this.alturaNivelMar = alturaNivelMar;
         this.clima = clima;
         this.zonaHoraria = zonaHoraria;
-        this.pertenece = pertenece;
+        this.pais = pais;
         this.mundial = mundial;
         this.estadios = estadios;
     }
@@ -54,11 +60,11 @@ public class Sede {
         this.zonaHoraria = zonaHoraria;
     }
 
-    public Pais getPertenece() {
-        return pertenece;
+    public Pais getPais() {
+        return pais;
     }
-    public void setPertenece(Pais pertenece) {
-        this.pertenece = pertenece;
+    public void setPais(Pais pais) {
+        this.pais = pais;
     }
 
     public Mundial getMundial() {
@@ -68,9 +74,7 @@ public class Sede {
         this.mundial = mundial;
     }
 
-    public void setEstadios(ArrayList<Estadio> estadios) {
-        this.estadios = estadios;
-    }
+    //Se utiliza agregarPartido() para incorporar nuevos partidos en lugar de un Setter
     public void agregarEstadio(Estadio estadio) {
         if(this.estadios == null) {
             this.estadios = new ArrayList<>();
