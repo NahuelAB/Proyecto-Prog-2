@@ -25,7 +25,6 @@ public class Fase {
     public NombreFase getNombre() {
         return nombre;
     }
-
     public void setNombre(NombreFase nombre) {
         this.nombre = nombre;
     }
@@ -34,7 +33,6 @@ public class Fase {
     public List<Partido> getCorresponde() {
         return corresponde;
     }
-
     public void setCorresponde(List<Partido> corresponde) {
         this.corresponde = corresponde;
     }
@@ -42,7 +40,6 @@ public class Fase {
     public List<Grupo> getIncluye() {
         return incluye;
     }
-
     public void setIncluye(List<Grupo> incluye) {
         this.incluye = incluye;
     }
