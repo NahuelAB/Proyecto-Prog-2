@@ -1,5 +1,5 @@
 package edu.mundial.report;
-import edu.mundial.domain.gestion.*;
+/*import edu.mundial.domain.gestion.*;
 import edu.mundial.domain.persona.*;
 import edu.mundial.domain.organizacion.*;
 
@@ -16,3 +16,4 @@ public class FichaTecnicaPartido {
         
     }
 }
+*/
