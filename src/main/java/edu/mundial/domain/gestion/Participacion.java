@@ -3,23 +3,27 @@ package edu.mundial.domain.gestion;
 import edu.mundial.domain.organizacion.Seleccion;
 
 public class Participacion {
+    //Atributos propios
     private boolean esLocal;
     public int cantidadGoles;
     public int cantidadTarjAmarilla;
     public int cantidadTarjRojas;
 
+    //Clases asociadas
     private Seleccion seleccion;
+    private Partido partido;
 
     public Participacion() {
-        this(false, 0, 0, 0, null);
+        this(false, 0, 0, 0, null, null);
     }
 
-    public Participacion(boolean esLocal, int cantidadGoles, int cantidadTarjAmarilla, int cantidadTarjRojas, Seleccion seleccion){
+    public Participacion(boolean esLocal, int cantidadGoles, int cantidadTarjAmarilla, int cantidadTarjRojas, Seleccion seleccion, Partido partido){
         this.esLocal = esLocal;
         this.cantidadGoles = cantidadGoles;
         this.cantidadTarjAmarilla = cantidadTarjAmarilla;
         this.cantidadTarjRojas = cantidadTarjRojas;
         this.seleccion = seleccion;
+        this.partido = partido;
     }
 
     //Getters y Setters
@@ -49,5 +53,13 @@ public class Participacion {
     public void setSeleccion(Seleccion seleccion){
         this.seleccion = seleccion;
     }
+
+    public Partido getPartido() {
+        return partido;
+    }
+    public void setPartido(Partido partido) {
+        this.partido = partido;
+    }
+
 
 }
