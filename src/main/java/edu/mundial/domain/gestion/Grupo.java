@@ -53,12 +53,66 @@ public class Grupo{
 
     //              ---Métodos---
     //Metodo para obtener los puntos de una seleccion.
-    /*public int obtenerPuntos(Seleccion s){
-        //NO TIENE LÓGICA REAL, POR EL MOMENTO SE LO DEJA DE ÉSTA FORMA HASTA TENER DESARROLLADO EL CÓDIGO.
+    public int obtenerPuntos(Seleccion seleccion){
         int puntos = 0;
+
+        //Seguros en caso de listas nulas o duplicadas.
+        if(seleccion == null){
+            return 0;
+        }
+        if(this.seAgrupa == null){
+            return 0;
+        }
+        if(!this.seAgrupa.contains(seleccion)){
+            return 0;
+        }
+        if(this.incluye == null){
+            return 0;
+        }
+        if(this.incluye.getCorresponde() == null){
+            return 0;
+        }
+
+        for(Partido partido : this.incluye.getCorresponde()){
+            List<Participacion> participaciones = partido.getParticipaciones();
+
+            if(participaciones == null || participaciones.size() != 2){
+                continue;
+            }
+
+            //Obtención de participaciones.
+            Participacion p1 = participaciones.get(0);
+            Participacion p2 = participaciones.get(1);
+
+            //Corrobora que ningunas de las participaciones sean nulas.
+            if(p1 == null || p2 == null){
+                continue;
+            }
+
+            //Verificación de pertenencia al mismo grupo.
+            if(!this.seAgrupa.contains(p1.getSeleccion()) || !this.seAgrupa.contains(p2.getSeleccion())){
+                continue;
+            }
+
+            if(p1.getSeleccion().equals(seleccion)){
+                if(p1.getCantidadGoles() > p2.getCantidadGoles()){
+                    puntos += 3;
+                }else if(p1.getCantidadGoles() == p2.getCantidadGoles()){
+                    puntos += 1;
+                }
+            }
+
+            if(p2.getSeleccion().equals(seleccion)){
+                if(p2.getCantidadGoles() > p1.getCantidadGoles()){
+                    puntos += 3;
+                }else if(p2.getCantidadGoles() == p1.getCantidadGoles()){
+                    puntos += 1;
+                }
+            }
+        }
+
         return puntos;
     }
-     */
 
     //Metodo para obtener las selecicones participantes en el grupo.
     public void seAgrupa(Seleccion seleccion){
