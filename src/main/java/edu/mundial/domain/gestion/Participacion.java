@@ -60,6 +60,4 @@ public class Participacion {
     public void setPartido(Partido partido) {
         this.partido = partido;
     }
-
-
 }

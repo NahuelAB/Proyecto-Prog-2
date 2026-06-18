@@ -115,6 +115,9 @@ public class Partido{
 
         //Seguro contra repetición de selecciones o repetición de locales/visitantes.
         for(Participacion p : participaciones){
+            if(p == null){
+                continue;
+            }
             if(p.getSeleccion().equals(seleccion)){
                 return;
             }
@@ -123,7 +126,7 @@ public class Partido{
             }
         }
 
-        Participacion participacion = new Participacion(esLocal,cantidadGoles, cantidadTarjAmarilla, cantidadTarjRojas, seleccion);
+        Participacion participacion = new Participacion(esLocal,cantidadGoles, cantidadTarjAmarilla, cantidadTarjRojas, seleccion, this);
 
         this.participaciones.add(participacion);
     }
