@@ -15,6 +15,7 @@ public class Seleccion {
     private ArrayList<CuerpoTecnico> cuerpoTecnico;
     private ArrayList<Jugador> jugadores;
     private ArrayList<Participacion> participaciones;
+    public Object mostrarDirectoresTecnicos;
 
     public Seleccion() {
         this("", "", "", false, 0, null, null, new ArrayList<>(), new ArrayList<>(), new ArrayList<>(), new ArrayList<>());
@@ -85,6 +86,9 @@ public class Seleccion {
         this.incluye = incluye;
     }
 
+    public ArrayList<DirectorTecnico> getDirectoresTecnicos() {
+        return directoresTecnicos;
+    }
     public void setDirectoresTecnicos(ArrayList<DirectorTecnico> directoresTecnicos) {
         this.directoresTecnicos = directoresTecnicos;
     }
@@ -120,6 +124,9 @@ public class Seleccion {
         }
     }
 
+    public ArrayList<Jugador> getJugadores() {
+        return jugadores;
+    }
     public void setJugadores(ArrayList<Jugador> jugadores) {
         this.jugadores = jugadores;
     }
